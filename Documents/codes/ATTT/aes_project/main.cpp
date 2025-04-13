@@ -8,12 +8,19 @@ int main() {
         auto input = readFile("input.txt");
         auto key = readFile("key.txt");
 
-        // Xử lý
+        // Mã hóa
         std::vector<unsigned char> encrypted;
         AES::Encrypt(input, key, encrypted);
-
-        // Ghi kết quả
         writeFile("encrypted.bin", encrypted);
+
+        // Giải mã
+        std::vector<unsigned char> decrypted;
+        AES::Decrypt(encrypted, key, decrypted);
+        writeFile("decrypted.bin", decrypted);
+
+        std::cout << "Da tao 2 file:\n"
+                  << "- encrypted.bin (da ma hoa)\n"
+                  << "- decrypted.bin (da giai ma)\n";
         
     } catch (const std::exception& e) {
         std::cerr << "Loi: " << e.what() << '\n';

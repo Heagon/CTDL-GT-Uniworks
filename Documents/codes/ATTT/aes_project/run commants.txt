@@ -1,0 +1,2 @@
+g++ -o main.exe main.cpp lib/aes_core.cpp -Ilib -std=c++17
+./main.exe
