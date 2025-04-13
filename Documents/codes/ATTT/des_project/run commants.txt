@@ -1,0 +1,2 @@
+g++ -std=c++17 -I. main.cpp des/des_core.cpp -o output/des_program
+./output/des_program
