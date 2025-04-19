@@ -1,0 +1,8 @@
+# chạy Parrallel
+make clean
+make
+.\Parallel.exe
+
+# chạy Serial
+g++ -o serial serial.cpp
+.\serial

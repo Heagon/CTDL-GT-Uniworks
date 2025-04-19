@@ -217,18 +217,27 @@ int main() {
     getline(file, line); // Skip header line
     while (getline(file, line)) {
         stringstream ss(line);
-        string source, target, weightStr;
-        getline(ss, source, ',');
-        getline(ss, target, ',');
-        getline(ss, weightStr, ',');
-        int weight = stoi(weightStr);
+        string episodeid, title, first_diffusion, doctoridStr, source, target, weightStr;
+    
+        if (line.find("episodeid,title,first_diffusion,doctorid") != string::npos)
+            continue;
+    
+        getline(ss, episodeid, ',');
+        getline(ss, title, ',');
+        getline(ss, first_diffusion, ',');
+        getline(ss, doctoridStr, ',');
+    
+        int weight = 0;
+        try {
+            weight = stoi(doctoridStr);
+        } catch (...) {
+            cerr << "Invalid weight in line: " << line << endl;
+            continue;
+        }
 
-        // Add edge from source to target with weight
-        graph[source][target] = weight;
-
-        // Check if the source and target nodes are new
-        uniqueNodes.insert(source);
-        uniqueNodes.insert(target);
+        graph[episodeid][title] = weight;
+        uniqueNodes.insert(episodeid);
+        uniqueNodes.insert(title);
     }
 
     file.close();
