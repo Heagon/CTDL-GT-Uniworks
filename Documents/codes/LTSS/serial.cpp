@@ -204,7 +204,7 @@ void printPaths(const vector<Path>& paths) {
 }
 
 int main() {
-    ifstream file("/home/azeem/Downloads/doctorwho.csv");
+    ifstream file("file_input.csv");
     if (!file.is_open()) {
         cerr << "Error: Unable to open the file." << endl;
         return 1;

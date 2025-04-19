@@ -217,7 +217,7 @@ int main(int argc, char *argv[]) {
 
     omp_set_num_threads(TOTAL_THREADS);
     
-    ifstream file("/home/azeem/Downloads/doctorwho.csv");
+    ifstream file("file_input.csv");
     if (!file.is_open()) {
         cerr << "Error: Unable to open the file." << endl;
         return 1;
