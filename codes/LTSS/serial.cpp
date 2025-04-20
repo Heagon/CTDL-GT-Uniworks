@@ -219,9 +219,6 @@ int main() {
         stringstream ss(line);
         string source, target, weightStr;
     
-        if (line.find("episodeid,title,first_diffusion,doctorid") != string::npos)
-            continue;
-    
             getline(ss, source, ',');
             getline(ss, target, ',');
             getline(ss, weightStr, ',');
