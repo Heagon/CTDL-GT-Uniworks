@@ -10,7 +10,7 @@
 #include <omp.h>
 #include<chrono>
 #include<mpi.h>
-
+#include <cstdlib>
 
 #define TOTAL_THREADS 4
 using namespace std;
@@ -217,7 +217,7 @@ int main(int argc, char *argv[]) {
 
     omp_set_num_threads(TOTAL_THREADS);
     
-    ifstream file("file_input.csv");
+    ifstream file("output/file_input.csv");
     if (!file.is_open()) {
         cerr << "Error: Unable to open the file." << endl;
         return 1;
