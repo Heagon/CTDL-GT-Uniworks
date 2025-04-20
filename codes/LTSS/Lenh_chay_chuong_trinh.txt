@@ -1,6 +1,7 @@
-Bước 1: chạy 1 trong 3 file tạo file input
+Bước 1: chạy 1 trong 3 file đặt tên đỉnh và cạnh để tạo file input
 Bước 2: tắt Terminal hiện tại rồi mở Terminal mới
 Bước 3: chạy các lệnh dưới từng cái một
+
 # chạy Parrallel
 make clean
 make
